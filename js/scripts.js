@@ -92,132 +92,138 @@ for (let i = 0; i < images.length; i++) {
 
 myArraySec[counter].classList.remove('overlay');
 
-afterButton.addEventListener('click',
+const myInterval = setInterval(nextCarousel, 3500);
 
-    () => {
+afterButton.addEventListener('click', nextCarousel);
 
-        if (counter >= images.length - 1) {
+previousButton.addEventListener('click', previousCarousel);
 
-            counter = 0;
+/*
 
-        } else {
+-------------------------- FUNZIONI --------------------------
 
-            counter++;
+*/
 
-        }
+// funzione next del carosello
+function nextCarousel() {
 
-        myImg.src = images[counter].image;
+    if (counter >= images.length - 1) {
 
-        myTitle.innerHTML = images[counter].title;
+        counter = 0;
 
-        myText.innerHTML = images[counter].text;
+    } else {
 
-        if (counter == 0) {
-
-            myArraySec[4].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 1) {
-
-            myArraySec[0].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 2) {
-
-            myArraySec[1].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 3) {
-
-            myArraySec[2].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 4) {
-
-            myArraySec[3].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
+        counter++;
 
     }
 
-)
+    myImg.src = images[counter].image;
 
-previousButton.addEventListener('click',
+    myTitle.innerHTML = images[counter].title;
 
-    () => {
+    myText.innerHTML = images[counter].text;
 
-        if (counter == 0) {
+    if (counter == 0) {
 
-            counter = images.length - 1;
+        myArraySec[4].classList.add('overlay');
 
-        } else {
-
-            counter--;
-
-        }
-
-        console.log(counter);
-
-        myImg.src = images[counter].image;
-
-        myTitle.innerHTML = images[counter].title;
-
-        myText.innerHTML = images[counter].text;
-
-        if (counter == 4) {
-
-            myArraySec[0].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 3) {
-
-            myArraySec[4].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 2) {
-
-            myArraySec[3].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 1) {
-
-            myArraySec[2].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
-
-        if (counter == 0) {
-
-            myArraySec[1].classList.add('overlay');
-
-            myArraySec[counter].classList.remove('overlay');
-
-        }
+        myArraySec[counter].classList.remove('overlay');
 
     }
 
-)
+    if (counter == 1) {
+
+        myArraySec[0].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 2) {
+
+        myArraySec[1].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 3) {
+
+        myArraySec[2].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 4) {
+
+        myArraySec[3].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+};
+
+// funzione previous del carosello 
+function previousCarousel() {
+
+    if (counter == 0) {
+
+        counter = images.length - 1;
+
+    } else {
+
+        counter--;
+
+    }
+
+    console.log(counter);
+
+    myImg.src = images[counter].image;
+
+    myTitle.innerHTML = images[counter].title;
+
+    myText.innerHTML = images[counter].text;
+
+    if (counter == 4) {
+
+        myArraySec[0].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 3) {
+
+        myArraySec[4].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 2) {
+
+        myArraySec[3].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 1) {
+
+        myArraySec[2].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+    if (counter == 0) {
+
+        myArraySec[1].classList.add('overlay');
+
+        myArraySec[counter].classList.remove('overlay');
+
+    }
+
+}
