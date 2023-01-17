@@ -94,6 +94,34 @@ myArraySec[counter].classList.remove('overlay');
 
 const myInterval = setInterval(nextCarousel, 3500);
 
+// bottone play
+const playButton = document.getElementById('play')
+
+playButton.addEventListener('click', 
+
+    () => {
+
+        setInterval(nextCarousel, 3500)
+
+    }
+
+);
+
+// bottone stop
+const stopButton = document.getElementById('stop');
+
+stopButton.addEventListener('click', 
+
+    () => {
+
+        clearInterval(myInterval);
+
+        console.log('click')
+
+    }
+    
+);
+
 afterButton.addEventListener('click', nextCarousel);
 
 previousButton.addEventListener('click', previousCarousel);
