@@ -92,7 +92,7 @@ for (let i = 0; i < images.length; i++) {
 
 myArraySec[counter].classList.remove('overlay');
 
-const myInterval = setInterval(nextCarousel, 3500);
+let myInterval;
 
 // bottone play
 const playButton = document.getElementById('play')
@@ -101,7 +101,7 @@ playButton.addEventListener('click',
 
     () => {
 
-        setInterval(nextCarousel, 3500)
+        myInterval = setInterval(nextCarousel, 3500);
 
     }
 
@@ -115,8 +115,6 @@ stopButton.addEventListener('click',
     () => {
 
         clearInterval(myInterval);
-
-        console.log('click')
 
     }
     
